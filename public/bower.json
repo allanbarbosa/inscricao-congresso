@@ -1,0 +1,15 @@
+{
+  "name": "Congresso de Juventudes",
+  "version": "1.0.0",
+  "authors": [
+    "Allan Barbosa <allan.frb@gmail.com>"
+  ],
+  "license": "MIT",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ]
+}
