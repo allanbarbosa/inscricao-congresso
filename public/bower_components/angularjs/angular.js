@@ -18726,7 +18726,7 @@ var inputType = {
    * @description
    * Input with time validation and transformation. In browsers that do not yet support
    * the HTML5 date input, a text element will be used. In that case, the text must be entered in a valid ISO-8601
-   * local time format (HH:mm:ss), for example: `14:57:00`. Model must be a Date object. This binding will always output a
+   * local time format (HH:mm:ss), for example: `14:57:00`. Models must be a Date object. This binding will always output a
    * Date object to the model of January 1, 1970, or local date `new Date(1970, 0, 1, HH, mm, ss)`.
    *
    * The model must always be a Date object, otherwise Angular will throw an error.
@@ -20211,7 +20211,7 @@ var NgModelController = ['$scope', '$exceptionHandler', '$attrs', '$element', '$
    * default. The `checkboxInputType` directive does this because in its case a value of `false`
    * implies empty.
    *
-   * @param {*} value Model value to check.
+   * @param {*} value Models value to check.
    * @returns {boolean} True if `value` is empty.
    */
   this.$isEmpty = function(value) {
@@ -21371,7 +21371,7 @@ var ngValueDirective = function() {
     </file>
   </example>
 
-  This one shows how to debounce model changes. Model will be updated only 1 sec after last change.
+  This one shows how to debounce model changes. Models will be updated only 1 sec after last change.
   If the `Clear` button is pressed, any debounced action is canceled and the value becomes empty.
 
   <example name="ngModelOptions-directive-debounce" module="optionsExample">
@@ -22179,11 +22179,11 @@ var ngCloakDirective = ngDirective({
  *
  * @description
  * The `ngController` directive attaches a controller class to the view. This is a key aspect of how angular
- * supports the principles behind the Model-View-Controller design pattern.
+ * supports the principles behind the Models-View-Controller design pattern.
  *
  * MVC components in angular:
  *
- * * Model — Models are the properties of a scope; scopes are attached to the DOM where scope properties
+ * * Models — Models are the properties of a scope; scopes are attached to the DOM where scope properties
  *   are accessed through bindings.
  * * View — The template (HTML with data bindings) that is rendered into the View.
  * * Controller — The `ngController` directive specifies a Controller class; the class contains business

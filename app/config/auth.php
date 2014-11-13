@@ -19,7 +19,7 @@ return array(
 
 	/*
 	|--------------------------------------------------------------------------
-	| Authentication Model
+	| Authentication Models
 	|--------------------------------------------------------------------------
 	|
 	| When using the "Eloquent" authentication driver, we need to know which
