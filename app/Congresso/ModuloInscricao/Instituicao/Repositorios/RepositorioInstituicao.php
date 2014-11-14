@@ -19,6 +19,7 @@ class RepositorioInstituicao extends RepositorioAbstract
         $this->instituicao->inst_juventude          = $input['inst_juventude'];
         $this->instituicao->inst_sigla_juventude    = $input['inst_sigla_juventude'];
         $this->instituicao->cod_municipio           = $input['cod_municipio'];
+        $this->instituicao->created_by              = $input['created_by'];
 
         $this->instituicao->save();
 
@@ -39,6 +40,7 @@ class RepositorioInstituicao extends RepositorioAbstract
         $this->instituicao->inst_juventude          = $input['inst_juventude'];
         $this->instituicao->inst_sigla_juventude    = $input['inst_sigla_juventude'];
         $this->instituicao->cod_municipio           = $input['cod_municipio'];
+        $this->instituicao->updated_by              = $input['updated_by'];
 
         $this->instituicao->save();
 
@@ -51,7 +53,8 @@ class RepositorioInstituicao extends RepositorioAbstract
     public function getWhere(array $input)
     {
         // TODO: Implement getWhere() method.
-        $instituicao = $this->instituicao->where('cod_municipio', '=', $input['cod_municipio'])->get();
+        $instituicao = $this->instituicao->join('municipio', 'municipio.muni_id', '=', 'instituicao.cod_municipios', 'left')
+                                         ->where('cod_municipios', '=', $input['cod_municipio'])->get();
 
         return (count($instituicao)) ? $instituicao : false;
     }

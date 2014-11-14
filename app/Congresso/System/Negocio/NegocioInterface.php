@@ -2,7 +2,7 @@
 
 interface NegocioInterface
 {
-    public function all();
+    public function all($input = null);
 
     public function find($id);
 
