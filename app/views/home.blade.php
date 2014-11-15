@@ -49,7 +49,7 @@
             <div class="col-lg-4 col-lg-offset-4 mt centered">
             	<h4>CLIQUE AQUI E FAÇA SEU CADASTRO</h4>
 				<form class="form-inline" role="form">
-				  <a class="btn btn-lg btn-info">QUERO ME INSCREVER AGORA!</a>
+				  <a href="/inscricao" class="btn btn-lg btn-info">QUERO ME INSCREVER AGORA!</a>
 				</form>
 			</div>
 

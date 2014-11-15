@@ -1,136 +1,56 @@
-<html>
-    <head>
-        <title>Incrição Iº Congresso de Jovens Espíritas do Estado da Bahia</title>
-        <link rel="stylesheet" href="{{ asset('bower_components/bootstrap/dist/css/bootstrap.css') }}"/>
-    </head>
-    <body>
+@extends('layout.template')
 
-        {{ Form::open() }}
-
-            <div class="row">
-                <div class="col-md-6">
-                    <div class="row">
-                        <div class="col-md-3">
-                            <label for="nomeCompleto" class="right">
-                                Nome Completo
-                            </label>
-                        </div>
-                        <div class="col-md-9">
-                            {{ Form::text('nomeCompleto') }}
-                        </div>
-                    </div>
-                </div>
-
-                <div class="col-md-6">
-                    <div class="row">
-                        <div class="col-md-3">
-                            <label for="CPF" class="right">CPF</label>
-                        </div>
-                        <div class="col-md-9">
-                            {{ Form::text('cpf') }}
-                        </div>
-                    </div>
-                </div>
-
-                <div class="col-md-6">
-                    <div class="row">
-                        <div class="col-md-3">
-                            <label for="dataNascimento">Data de Nascimento</label>
-                        </div>
-                        <div class="col-md-9">
-                            {{ Form::text('dataNascimento') }}
-                        </div>
-                    </div>
-                </div>
-
-                <div class="col-md-6">
-                    <div class="row">
-                        <div class="col-md-3">
-                            <label for="email">E-mail</label>
-                        </div>
-                        <div class="col-md-9">
-                            {{ Form::text('email') }}
-                        </div>
-                    </div>
-                </div>
-
-                <div class="col-md-6">
-                    <div class="row">
-                        <div class="col-md-3">
-                            <label for="telefoneResidencial">Telefone Residencial</label>
-                        </div>
-                        <div class="col-md-9">
-                            {{ Form::text('telefoneResidencial') }}
-                        </div>
-                    </div>
-                </div>
-
-                <div class="col-md-6">
-                    <div class="row">
-                        <div class="col-md-3">
-                            <label for="telefoneCelular">Telefone Celular</label>
-                        </div>
-                        <div class="col-md-9">
-                            {{ Form::text('telefoneCelular') }}
-                        </div>
-                    </div>
-                </div>
-
-                <div class="col-md-6">
-                    <div class="row">
-                        <div class="col-md-3">
-                            <label for="endereco">Endereço</label>
-                        </div>
-                        <div class="col-md-9">
-                             {{ Form::textarea('endereco') }}
-                        </div>
-                    </div>
-                </div>
-                
-                <div class="col-md-6">
-                    <div class="row">
-                        <div class="col-md-3">
-                            <label for="motvacao">Motivação</label>
-                        </div>
-                        <div class="col-md-9">
-                            {{ Form::textarea('motivacao') }}
-                        </div>
-                    </div>
-                </div>
-
-                <div class="col-md-6">
-                    <div class="row">
-                        <div class="col-md-3">
-                            <label for="municipio">Municipios</label>
-                        </div>
-                        <div class="col-md-9">
-                            {{ Form::select('municipio') }}
-                        </div>
-                    </div>
-                </div>
-
-                <div class="col-md-6">
-                    <div class="row">
-                        <div class="col-md-3">
-                            <label for="sexo">Sexo</label>
-                        </div>
-                        <div class="col-md-9">
-                            {{ Form::select('sexo') }}
-                        </div>
-                    </div>
-                </div>
-
-                <div class="col-md-6">
-                    <div class="row">
-                        <div class="col-md-3">
-                            <label for="sexo">Instituição</label>
-                        </div>
-                        <div class="col-md-9">
-                            {{ Form::select('instituicao') }}
-                        </div>
-                    </div>
-                </div>
-            </div>
-        {{ Form::close() }}
-    </body>
-</html>
+@section('content')
+{{ Form::open() }}
+    <div class="form-group col-sm-12">
+        <label for="nomeCompleto">Nome Completo</label>
+        {{ Form::text('nomeCompleto', '', ['class' => 'form-control']) }}
+    </div>
+    <div class="form-group col-sm-12">
+        <label for="CPF" class="right">CPF</label>
+        {{ Form::text('cpf', '', ['class' => 'form-control']) }}
+    </div>
+    <div class="form-group col-sm-12">
+        <label for="dataNascimento">Data de Nascimento</label>
+        {{ Form::text('dataNascimento', '', ['class' => 'form-control']) }}
+    </div>
+    <div class="form-group col-sm-12">
+        <label for="email">E-mail</label>
+        {{ Form::text('email', '', ['class' => 'form-control']) }}
+    </div>
+    <div class="form-group col-sm-12">
+        <label for="telefoneResidencial">Telefone Residencial</label>
+        {{ Form::text('telefoneResidencial', '', ['class' => 'form-control']) }}
+    </div>
+    <div class="form-group col-sm-12">
+        <label for="telefoneCelular">Telefone Celular</label>
+        {{ Form::text('telefoneCelular', '', ['class' => 'form-control']) }}
+    </div>
+    <div class="form-group col-sm-12">
+        <label for="endereco">Endereço</label>
+        {{ Form::text('endereco', '', ['class' => 'form-control']) }}
+    </div>
+    <div class="form-group col-sm-12">
+         <label for="motvacao">Motivação</label>
+        {{ Form::textarea('motivacao', '',['class' => 'form-control']) }}
+    </div>
+    <div class="form-group col-sm-12">
+         <label for="municipio">Municipios</label>
+        {{ Form::select('municipio', ['salvador', 'feira de santana'],'', ['class'=>'form-control']) }}
+    </div>
+    <div class="form-group col-sm-12">
+         <label for="sexo">Sexo</label>
+        {{ Form::select('sexo', ['masculino', 'feminino'],'', ['class'=>'form-control']) }}
+    </div>
+    <div class="form-group col-sm-12">
+         <label for="instituicao">Instituição</label>
+        {{ Form::select('instituicao', ['Amar' , 'Amado'], '',['class'=>'form-control']) }}
+    </div>
+    <div class="col-sm-12">
+    <hr/>
+    </div>
+    <div class="form-group col-sm-12">
+        <button class="btn btn-default btn-lg" type="submit">Salvar</button>
+    </div>
+{{Form::close()}}
+@endsection

@@ -15,6 +15,8 @@
 Route::get('/', function()
 {
 	return View::make('home');
-//	return View::make('Inscricao.form');
+});
 
+Route::get('/inscricao', function(){
+	return View::make('Inscricao.form');
 });
