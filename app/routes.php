@@ -17,6 +17,8 @@ Route::get('/', function()
 	return View::make('home');
 });
 
-Route::get('/inscricao', function(){
-	return View::make('Inscricao.form');
-});
+//Route::get('/inscricao', function(){
+//	return View::make('Inscricao.form');
+//});
+
+Route::controller('/inscricao', '\Congresso\ModuloInscricao\Participante\Controllers\ParticipanteController');

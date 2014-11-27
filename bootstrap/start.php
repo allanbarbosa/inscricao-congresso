@@ -24,11 +24,26 @@ $app = new Illuminate\Foundation\Application;
 |
 */
 
-$env = $app->detectEnvironment(array(
+$env = $app->detectEnvironment(function() {
 
-	'local' => array('homestead'),
+    //'local' => array('homestead'),
 
-));
+    if (php_sapi_name() != 'cli') {
+        /* Verifica o domínio e retorna o ambiente correspondente.
+        * Note a ausencia de da intrução "break" pois em todos os casos,
+        * o comando return já irá finalizar a execução do código.
+        */
+        switch ($_SERVER['SERVER_NAME']) {
+
+            case 'congresso-juventudes.dev':
+                return 'local';
+
+            default:
+                return 'producao';
+        }
+    }
+
+});
 
 /*
 |--------------------------------------------------------------------------

@@ -3,7 +3,7 @@
 	<head>
 		<meta http-equiv="content-type" content="text/html; charset=UTF-8">
 		<meta charset="utf-8">
-		<title>Basis Template for Bootstrap 3</title>
+		<title>Congresso de Juventudes Espíritas do Estado da Bahia</title>
 		<meta name="generator" content="Bootply" />
 		<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
 		<link href="css/bootstrap.min.css" rel="stylesheet">
@@ -41,7 +41,7 @@
                         <div class="col-sm-12">
                           <div class="page-header text-muted">
                             <h3>Formulário de Inscrição<br></h3>
-                            <small>Primeiro Congresso Espirita do Estado da Bahia</small>
+                            <small>Primeiro Congresso de Juventudes Espiritas do Estado da Bahia</small>
                           </div>
                         </div>
 
@@ -83,5 +83,6 @@
     </div>
 </div>
     <script src="{{ asset('bower_components/jquery/dist/jquery.min.js') }}"></script>
+    @yield('scripts')
 	</body>
 </html>
