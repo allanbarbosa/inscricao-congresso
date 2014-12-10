@@ -1,4 +1,4 @@
-<?php namespace Congresso\ModuloInscricao\Instituicao\Models;
+<?php namespace Congresso\ModuloAdministrativo\Instituicao\Models;
 
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\SoftDeletingTrait;

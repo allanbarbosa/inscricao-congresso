@@ -1,6 +1,6 @@
-<?php namespace Congresso\ModuloInscricao\Instituicao\Repositorios;
+<?php namespace Congresso\ModuloAdministrativo\Instituicao\Repositorios;
 
-use Congresso\ModuloInscricao\Instituicao\Models\Instituicao;
+use Congresso\ModuloAdministrativo\Instituicao\Models\Instituicao;
 use Congresso\System\Repositorio\RepositorioAbstract;
 
 class RepositorioInstituicao extends RepositorioAbstract
@@ -53,10 +53,11 @@ class RepositorioInstituicao extends RepositorioAbstract
     public function getWhere(array $input)
     {
         // TODO: Implement getWhere() method.
-        $instituicao = $this->instituicao->join('municipio', 'municipio.muni_id', '=', 'instituicao.cod_municipios', 'left')
-                                         ->where('cod_municipios', '=', $input['cod_municipio'])->get();
+        $instituicao = $this->instituicao->where('cod_municipios', '=', $input['cod_municipio'])
+                                         ->orderBy('inst_nome', 'ASC')
+                                         ->get();
 
-        return (count($instituicao)) ? $instituicao : false;
+        return $instituicao;
     }
 
 

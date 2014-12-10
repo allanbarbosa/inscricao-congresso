@@ -1,9 +1,9 @@
-<?php namespace Congresso\ModuloInscricao\Instituicao;
+<?php namespace Congresso\ModuloAdministrativo\Instituicao;
 
-use Congresso\ModuloInscricao\Instituicao\Repositorios\RepositorioInstituicao;
-use Congresso\ModuloInscricao\Instituicao\Validacao\ValidacaoInstituicao;
+use Congresso\ModuloAdministrativo\Instituicao\Repositorios\RepositorioInstituicao;
+use Congresso\ModuloAdministrativo\Instituicao\Validacao\ValidacaoInstituicao;
 use Congresso\System\Negocio\NegocioInterface;
-use Congresso\ModuloInscricao\Instituicao\Models\Instituicao as ModelInstituicao;
+use Congresso\ModuloAdministrativo\Instituicao\Models\Instituicao as ModelInstituicao;
 use Illuminate\Support\Facades\Auth;
 
 class Instituicao implements NegocioInterface
@@ -30,26 +30,25 @@ class Instituicao implements NegocioInterface
         // TODO: Implement all() method.
         try
         {
+            if(!is_null($input)){
+                $instituicoes = $this->repositorioInstituicao->getWhere($input);
+            }else{
+                $instituicoes = $this->repositorioInstituicao->all();
+            }
 
-            if(!is_array($input))
-                throw new \AppException('O tipo da variavel {input} está incorreto. Tipo passado foi: ' . gettype($input));
-
-            if(!is_null($input))
-                throw new \AppException('A variavel não pode ser vazia');
-
-            $instituicoes = $this->repositorioInstituicao->getWhere($input);
+            if(count($instituicoes) == 0){
+                return null;
+            }
 
             $dadosInstituicao = [];
 
-            foreach($instituicoes as $instituicao)
+            foreach($instituicoes as $key => $i)
             {
-                $dadosInstituicao[] = [
-                            'nomeInstituicao'   => $instituicao->inst_nome,
-                            'juventude'         => $instituicao->inst_juventude,
-                            'siglaJuventude'    => $instituicao->inst_sigla_juventude,
-                            'idInstituicao'     => $instituicao->inst_id,
-                            'municipio'         => $instituicao->muni_descricao
-                ];
+                $dadosInstituicao[$key]     = new \stdClass();
+
+                $dadosInstituicao[$key]->id     = $i->inst_id;
+                $dadosInstituicao[$key]->nome   = $i->inst_nome;
+
             }
 
             return $dadosInstituicao;

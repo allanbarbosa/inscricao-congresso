@@ -21,4 +21,7 @@ Route::get('/', function()
 //	return View::make('Inscricao.form');
 //});
 
+Route::get('/municipios', '\Congresso\ModuloAdministrativo\Municipios\Controllers\MunicipiosController@getMunicipios');
+Route::get('/instituicoes', '\Congresso\ModuloAdministrativo\Instituicao\Controllers\InstituicaoController@getInstituicoes');
+
 Route::controller('/inscricao', '\Congresso\ModuloInscricao\Participante\Controllers\ParticipanteController');

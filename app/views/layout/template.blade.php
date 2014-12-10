@@ -6,7 +6,6 @@
 		<title>Congresso de Juventudes Espíritas do Estado da Bahia</title>
 		<meta name="generator" content="Bootply" />
 		<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-		<link href="css/bootstrap.min.css" rel="stylesheet">
 		<link href="{{ asset('bower_components/bootstrap/dist/css/bootstrap.min.css')}}" rel="stylesheet">
 		<!--[if lt IE 9]>
 			<script src="{{ asset('bower_components/thema/js/html5shiv.js')}}"></script>

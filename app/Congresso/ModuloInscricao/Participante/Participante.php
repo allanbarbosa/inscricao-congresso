@@ -50,7 +50,7 @@ class Participante implements NegocioInterface
 
                 $dados['part_nome_completo']                = $input['nomeCompleto'];
                 $dados['part_nome_cracha']                  = $input['nomeCracha'];
-                $dados['part_cpf']                          = $input['cpf'];
+                $dados['part_cpf']                          = self::removeCaracter($input['cpf'], ['.', '-'], ['','']);
                 $dados['part_rg']                           = $input['rg'];
                 $dados['part_data_nascimento']              = $input['dataNascimento'];
                 $dados['part_endereco']                     = $input['endereco'];
@@ -90,6 +90,13 @@ class Participante implements NegocioInterface
     {
         // TODO: Implement getErrors() method.
         return $this->errors;
+    }
+
+    protected function removeCaracter($valor, $procurar, $substituir)
+    {
+        $input = str_replace($procurar, $substituir, $valor);
+
+        return $input;
     }
 
 }

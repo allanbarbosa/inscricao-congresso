@@ -1,4 +1,4 @@
-<?php namespace Congresso\ModuloInscricao\Instituicao\Validacao;
+<?php namespace Congresso\ModuloAdministrativo\Instituicao\Validacao;
 
 use Congresso\System\Validacao\ValidatorAbstract;
 
