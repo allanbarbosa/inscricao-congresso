@@ -4,6 +4,11 @@ use Congresso\ModuloInscricao\Participante\Repositorios\RepositorioParticipante;
 use Congresso\ModuloInscricao\Participante\Validacao\ValidacaoParticipante;
 use Congresso\System\Negocio\NegocioInterface;
 use Congresso\ModuloInscricao\Participante\Models\Participante as ModelParticipante;
+use Illuminate\Support\Facades\Redirect;
+use PHPSC\PagSeguro\Credentials;
+use PHPSC\PagSeguro\Environments\Sandbox;
+use PHPSC\PagSeguro\Items\Item;
+use PHPSC\PagSeguro\Requests\Checkout\CheckoutService;
 
 class Participante implements NegocioInterface
 {
@@ -64,6 +69,47 @@ class Participante implements NegocioInterface
                 $dados['part_motivacao']                    = $input['motivacao'];
 
                 $salvar = $this->repositorioParticipante->save($dados);
+
+                if(!$salvar){
+                    throw new \AppException('Não foi possivel salvar os dados');
+                }
+
+//                $paymentRequest = new \PagSeguroPaymentRequest();
+//                $paymentRequest->addItem('001', 'Inscrição Congresso Juventude', 1, 50.00);
+//
+//                $paymentRequest->setSenderName($input['nomeCompleto']);
+//                $paymentRequest->setSenderEmail($input['email']);
+//                $paymentRequest->setSenderPhone('71', $input['telefoneCelular']);
+//
+//                $paymentRequest->setCurrency('BRL');
+//
+//                $paymentRequest->setReference('PAGJUV2015');
+//
+//                $paymentRequest->setRedirectURL('http://congresso-juventudes.dev/agradeco');
+//
+//                $credentials = \PagSeguroConfig::getAccountCredentials();
+//                $checkoutUrl = $paymentRequest->register($credentials);
+//
+//                dd($checkoutUrl);
+
+                $credentials = new Credentials(
+                    'allan.frb@gmail.com',
+                    'E2CAF93880C44BA2AB8AA5D24AA3B8A9',
+                    new Sandbox()
+                );
+
+                $service = new CheckoutService($credentials);
+
+                $checkout = $service->createCheckoutBuilder()
+                                    ->addItem(new Item(1, 'Inscricao Congresso', 50.00))
+
+                                    ->getCheckout();
+
+                $response = $service->checkout($checkout);
+
+                //header('Location: '. $response->getRedirectionUrl());
+
+                return $response->getRedirectionUrl();
 
                 return true;
             });

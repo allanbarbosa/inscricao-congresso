@@ -20,6 +20,9 @@ Route::get('/', function()
 //Route::get('/inscricao', function(){
 //	return View::make('Inscricao.form');
 //});
+Route::get('/agradeco', function(){
+	return View::make('hello');
+});
 
 Route::get('/municipios', '\Congresso\ModuloAdministrativo\Municipios\Controllers\MunicipiosController@getMunicipios');
 Route::get('/instituicoes', '\Congresso\ModuloAdministrativo\Instituicao\Controllers\InstituicaoController@getInstituicoes');

@@ -27,5 +27,11 @@ class ParticipanteController extends \BaseController
         if($salvar instanceof MessageBag){
             return \Redirect::back()->withErrors($salvar)->withInput();
         }
+
+        if(!$salvar){
+            return \Redirect::back()->withErrors($this->participante->getErrors())->withInput();
+        }
+
+        return \Redirect::to($salvar);
     }
 }
