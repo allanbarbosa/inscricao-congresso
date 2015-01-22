@@ -81,26 +81,6 @@
         {{ Form::dropdownbox('instituicao', 'inst_id', 'inst_nome', 'instituicao', ['class' => 'form-control']) }}
         {{ $errors->first('instituicao', '<div class="alert alert-danger">:message</div>') }}
     </div>
-    <div class="form-group col-sm-12 {{ ($errors->first('juventude')) ? 'has-error' : '' }}">
-        <label for="juventude">Juventude</label>
-        {{ Form::text('juventude', '', ['class' => 'form-control']) }}
-        {{ $errors->first('juventude', '<div class="alert alert-danger">:message</div>') }}
-    </div>
-    <div class="form-group col-sm-4 {{ ($errors->first('siglaJuventude')) ? 'has-error' : '' }}">
-        <label for="siglaJuventude">Sigla da Juventude</label>
-        {{ Form::text('siglaJuventude', '', ['class' => 'form-control']) }}
-        {{ $errors->first('siglaJuventude', '<div class="alert alert-danger">:message</div>') }}
-    </div>
-    <div class="form-group col-sm-4 {{ ($errors->first('coordenador')) ? 'has-error' : '' }}">
-        <label for="coordenador">Coordenador da Juventude</label>
-        {{ Form::text('coordenadorJuventude', '', ['class' => 'form-control']) }}
-        {{ $errors->first('coordenadorJuventude', '<div class="alert alert-danger">:message</div>') }}
-    </div>
-    <div class="form-group col-sm-4 {{ ($errors->first('telefoneCoordenador')) ? 'has-error' : '' }}">
-        <label for="telefoneCoordenador">Telefone do Coordenador</label>
-        {{ Form::text('telefoneCoordenador', '', ['class' => 'form-control telefone']) }}
-        {{ $errors->first('telefoneCoordenador', '<div class="alert alert-danger">:message</div>') }}
-    </div>
     <div class="form-group col-sm-12 {{ ($errors->first('necessidadeEspecial')) ? 'has-error' : '' }}">
         <label for="necessidadeEspecial">Possui alguma necessidade especial?</label>
         {{ Form::text('necessidadeEspecial', '', ['class' => 'form-control']) }}

@@ -47,10 +47,24 @@ class Participante implements NegocioInterface
 
             return \DB::connection()->transaction(function() use ($input){
 
+                $validaCpf = self::validaCPF($input['cpf']);
+
+                if(!$validaCpf){
+                    throw new \AppException('O CPF passado é inválido');
+                }
+
                 $this->validacaoParticipante->with($input);
 
                 if(!$this->validacaoParticipante->passes()){
                     return $this->validacaoParticipante->errors();
+                }
+
+
+
+                $existeCpf = self::buscarCPF(self::removeCaracter($input['cpf'], ['.', '-'], ['','']));
+
+                if($existeCpf){
+                    throw new \AppException('O CPF passado já está cadastrado no sistema');
                 }
 
                 $dados['part_nome_completo']                = $input['nomeCompleto'];
@@ -73,43 +87,6 @@ class Participante implements NegocioInterface
                 if(!$salvar){
                     throw new \AppException('Não foi possivel salvar os dados');
                 }
-
-//                $paymentRequest = new \PagSeguroPaymentRequest();
-//                $paymentRequest->addItem('001', 'Inscrição Congresso Juventude', 1, 50.00);
-//
-//                $paymentRequest->setSenderName($input['nomeCompleto']);
-//                $paymentRequest->setSenderEmail($input['email']);
-//                $paymentRequest->setSenderPhone('71', $input['telefoneCelular']);
-//
-//                $paymentRequest->setCurrency('BRL');
-//
-//                $paymentRequest->setReference('PAGJUV2015');
-//
-//                $paymentRequest->setRedirectURL('http://congresso-juventudes.dev/agradeco');
-//
-//                $credentials = \PagSeguroConfig::getAccountCredentials();
-//                $checkoutUrl = $paymentRequest->register($credentials);
-//
-//                dd($checkoutUrl);
-
-                $credentials = new Credentials(
-                    'allan.frb@gmail.com',
-                    'E2CAF93880C44BA2AB8AA5D24AA3B8A9',
-                    new Sandbox()
-                );
-
-                $service = new CheckoutService($credentials);
-
-                $checkout = $service->createCheckoutBuilder()
-                                    ->addItem(new Item(1, 'Inscricao Congresso', 50.00))
-
-                                    ->getCheckout();
-
-                $response = $service->checkout($checkout);
-
-                //header('Location: '. $response->getRedirectionUrl());
-
-                return $response->getRedirectionUrl();
 
                 return true;
             });
@@ -145,4 +122,51 @@ class Participante implements NegocioInterface
         return $input;
     }
 
+    protected function buscarCPF($cpf)
+    {
+        return ModelParticipante::where('part_cpf', '=', $cpf)->first();
+    }
+
+    protected function validaCPF($cpf)
+    {
+        if(empty($cpf)){
+            return false;
+        }
+
+        $cpf = self::removeCaracter($cpf, ['.', '-'], ['', '']);
+        $cpf = str_pad($cpf, 11, '0', STR_PAD_LEFT);
+
+        if(strlen($cpf) != 11){
+            return false;
+        }elseif($cpf == '00000000000' ||
+            $cpf == '11111111111' ||
+            $cpf == '22222222222' ||
+            $cpf == '33333333333' ||
+            $cpf == '44444444444' ||
+            $cpf == '55555555555' ||
+            $cpf == '66666666666' ||
+            $cpf == '77777777777' ||
+            $cpf == '88888888888' ||
+            $cpf == '99999999999'){
+            return false;
+        }else{
+
+            for ($t = 9; $t < 11; $t++) {
+
+                for ($d = 0, $c = 0; $c < $t; $c++) {
+                    $d += $cpf{$c} * (($t + 1) - $c);
+                }
+
+                $d = ((10 * $d) % 11) % 10;
+
+                if ($cpf{$c} != $d) {
+                    return false;
+                }
+            }
+
+            return true;
+        }
+
+
+    }
 }

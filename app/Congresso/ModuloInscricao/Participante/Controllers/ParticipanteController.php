@@ -29,9 +29,11 @@ class ParticipanteController extends \BaseController
         }
 
         if(!$salvar){
-            return \Redirect::back()->withErrors($this->participante->getErrors())->withInput();
+            \Session::flash('erro', $this->participante->getErrors());
+            return \Redirect::back()->withInput();
         }
 
-        return \Redirect::to($salvar);
+        \Session::flash('sucesso', 'Seu cadastro foi salvo com sucesso');
+        return \Redirect::to('/inscricao');
     }
 }

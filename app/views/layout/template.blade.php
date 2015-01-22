@@ -21,9 +21,7 @@
             <div class="column col-sm-3" id="sidebar">
                 <a class="logo" href="#">B</a>
                 <ul class="nav">
-                    <li class="active"><a href="#featured">Featured</a>
-                    </li>
-                    <li><a href="#stories">Stories</a>
+                    <li class="active"><a href="/">Home</a>
                     </li>
                 </ul>
                 <ul class="nav hidden-xs" id="sidebar-footer">
@@ -41,8 +39,28 @@
                           <div class="page-header text-muted">
                             <h3>Formulário de Inscrição<br></h3>
                             <small>Primeiro Congresso de Juventudes Espiritas do Estado da Bahia</small>
+                              <br/>
+                              <small>O Pagamento deverá ser feito através de:</small>
+                              <br/>
+                              <small>1 - Depósito Bancário na Conta da FEEB. Banco do Brasil, Agência: 2971-8 e Conta Corrente: 2010-9</small>
+                              <br />
+                              <small>2 - Na própria FEEB, Rua Coronel Jayme Rolemberg, 110 – Bela Vista de Brotas</small>
+                              <br/>
+                              <small>Ao finalizar o pagamento, favor encaminhar o comprovante para o email da CIJ: cij.feeb2011@gmail.com, com o nome do participante</small>
                           </div>
                         </div>
+
+                        @if(Session::get('sucesso') )
+                            <div data-alert class="alert alert-success">
+                                {{ Session::get('sucesso') }}
+                            </div>
+                        @endif
+
+                        @if(Session::get('erro') )
+                            <div data-alert class="alert alert-warning">
+                                {{ Session::get('erro') }}
+                            </div>
+                        @endif
 
                         <!--/top story-->
                         <div class="row content">
