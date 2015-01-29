@@ -26,7 +26,7 @@ return array(
 	|
 	*/
 
-	'default' => 'mysql',
+	'default' => 'pgsql',
 
 	/*
 	|--------------------------------------------------------------------------
@@ -66,9 +66,9 @@ return array(
 		'pgsql' => array(
 			'driver'   => 'pgsql',
 			'host'     => 'localhost',
-			'database' => 'forge',
-			'username' => 'forge',
-			'password' => '',
+			'database' => 'inscricao_congresso',
+			'username' => 'feeb',
+			'password' => 'qSA8NT5rpbCRqZ26',
 			'charset'  => 'utf8',
 			'prefix'   => '',
 			'schema'   => 'public',
