@@ -8,7 +8,7 @@
     <meta name="author" content="">
     <link rel="shortcut icon" href="assets/ico/favicon.png">
 
-    <title>Counter - Coming Soon Theme</title>
+    <title>Congresso da Juventude Espírita do Estado da Bahia</title>
 
     <!-- Bootstrap core CSS -->
     <link href="{{ asset('bower_components/bootstrap/dist/css/bootstrap.css')}}" rel="stylesheet">
