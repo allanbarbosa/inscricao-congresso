@@ -38,15 +38,15 @@
                         <div class="col-sm-12">
                           <div class="page-header text-muted">
                             <h3>Formulário de Inscrição<br></h3>
-                            <small>Primeiro Congresso de Juventudes Espiritas do Estado da Bahia</small>
+                            <small>I Congresso de Juventudes Espiritas do Estado da Bahia</small>
                               <br/>
                               <small>O Pagamento deverá ser feito através de:</small>
                               <br/>
-                              <small>1 - Depósito Bancário na Conta da FEEB. Banco do Brasil, Agência: 2971-8 e Conta Corrente: 2010-9</small>
+                              <small>1 - Depósito Bancário na Conta da FEEB: Banco do Brasil Agência: 2971-8 e Conta Corrente: 2010-9</small>
                               <br />
-                              <small>2 - Na própria FEEB, Rua Coronel Jayme Rolemberg, 110 – Bela Vista de Brotas</small>
+                              <small>2 - Na Sede Administrativa da FEEB, Rua Coronel Jayme Rolemberg, 110 – Bela Vista de Brotas, Salvador - BA</small>
                               <br/>
-                              <small>Ao finalizar o pagamento, favor encaminhar o comprovante para o email da CIJ: cij.feeb2011@gmail.com, com o nome do participante</small>
+                              <small>Ao efetuar o pagamento, encaminhe o comprovante para o email da Coordenadoria de Infância e Juventude da <FEEB></FEEB>: cij.feeb2011@gmail.com, com o nome do participante</small>
                           </div>
                         </div>
 

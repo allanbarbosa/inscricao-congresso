@@ -28,3 +28,4 @@ Route::get('/municipios', '\Congresso\ModuloAdministrativo\Municipios\Controller
 Route::get('/instituicoes', '\Congresso\ModuloAdministrativo\Instituicao\Controllers\InstituicaoController@getInstituicoes');
 
 Route::controller('/inscricao', '\Congresso\ModuloInscricao\Participante\Controllers\ParticipanteController');
+Route::controller('/caravana','\Congresso\ModuloInscricao\Caravana\Controllers\CaravanaController');

@@ -48,10 +48,11 @@
                 <div id="seconds" class="timer_box"></div>
             </div>
             <!-- END TIMER -->
-            <div class="col-lg-4 col-lg-offset-4 mt centered">
+            <div class="col-lg-12 mt centered">
             	<h4>CLIQUE AQUI E FAÇA SEU CADASTRO</h4>
 				<form class="form-inline" role="form">
 				  <a href="/inscricao" class="btn btn-lg btn-info">QUERO ME INSCREVER AGORA!</a>
+				  <a href="/caravana" class="btn btn-lg btn-info">QUERO INSCREVER MINHA CARAVANA!</a>
 				</form>
 			</div>
 

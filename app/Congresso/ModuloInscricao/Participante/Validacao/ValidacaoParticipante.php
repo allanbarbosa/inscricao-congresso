@@ -12,13 +12,11 @@ class ValidacaoParticipante extends ValidatorAbstract
         'dataNascimento'        => ['required'],
         'endereco'              => ['required'],
         'municipio'             => ['required', 'not_in:0'],
-        'telefoneResidencial'   => ['required'],
         'telefoneCelular'       => ['required'],
         'email'                 => ['required', 'email'],
         'instituicao'           => ['required', 'not_in:0'],
         'sexo'                  => ['required', 'not_in:0'],
-        'necessidadeEspecial'   => ['required'],
-        'motivacao'             => ['required']
+        'necessidadeEspecial'   => ['required']
     ];
 
     protected $message = [

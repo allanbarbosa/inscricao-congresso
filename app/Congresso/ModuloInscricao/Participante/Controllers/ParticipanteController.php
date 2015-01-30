@@ -15,7 +15,7 @@ class ParticipanteController extends \BaseController
 
     public function getIndex()
     {
-        return \View::make('Inscricao.form');
+        return \View::make('Inscricao.participante.form');
     }
 
     public function postIndex()
