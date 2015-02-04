@@ -51,7 +51,7 @@ class Caravana implements NegocioInterface
                     throw new \AppException('Só é permitido Caravanas do Interior do Estado ou de outro municipio');
                 }
 
-                if(count($input['nome']) < 5){
+                if(count($input['nome']) < 4){
                     throw new \AppException('O número de participantes deve conter no mínimo 5 pessoas');
                 }
 
@@ -82,7 +82,7 @@ class Caravana implements NegocioInterface
                     $participantes->part_nome_completo       = $input['nomeCompleto'][$i];
                     $participantes->part_nome_cracha         = $input['nomeCracha'][$i];
                     $participantes->part_cpf                 = self::removeCaracter($input['cpf'][$i], ['.', '-'], ['','']);
-                    $participantes->part_data_nascimento     = $input['dataNascimento'][$i];
+                    $participantes->part_data_nascimento     = date('Y-m-d', strtotime($input['dataNascimento'][$i]));
                     $participantes->cod_municipios           = $input['municipio'];
                     $participantes->part_telefone_celular    = $input['telefone'][$i];
                     $participantes->part_email               = $input['email'][$i];

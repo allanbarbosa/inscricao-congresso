@@ -71,7 +71,7 @@ class Participante implements NegocioInterface
                 $dados['part_nome_cracha']                  = $input['nomeCracha'];
                 $dados['part_cpf']                          = self::removeCaracter($input['cpf'], ['.', '-'], ['','']);
                 $dados['part_rg']                           = $input['rg'];
-                $dados['part_data_nascimento']              = $input['dataNascimento'];
+                $dados['part_data_nascimento']              = date('Y-m-d', strtotime($input['dataNascimento']));
                 $dados['part_endereco']                     = $input['endereco'];
                 $dados['cod_municipios']                    = $input['municipio'];
                 $dados['part_telefone_residencial']         = $input['telefoneResidencial'];

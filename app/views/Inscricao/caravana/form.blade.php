@@ -293,7 +293,7 @@
         function enviar(form)
         {
 
-            if(elemento.length < 5){
+            if(elemento.length < 4){
                 alert('No mínimo precisa ter um total de 5 integrantes da Caravana');
                 return false;
             }

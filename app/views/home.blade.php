@@ -63,10 +63,10 @@
         <!-- START SLIDER -->
         <div id="slider" class="rev_slider">
             <ul>
-              <li data-transition="slideleft" data-slotamount="1" data-thumb="{{url('media/slider/1.jpg')}}">
+              <li data-transition="slideleft" data-slotamount="1" data-thumb="{{url('media/slider/1.png')}}">
                 <img src="{{url('media/slider/1.jpg')}}">
               </li>
-              <li data-transition="slideleft" data-slotamount="1" data-thumb="{{url('media/slider/2.jpg')}}">
+              {{--<li data-transition="slideleft" data-slotamount="1" data-thumb="{{url('media/slider/2.jpg')}}">
                 <img src="{{url('media/slider/2.jpg')}}">
               </li>
               <li data-transition="slideleft" data-slotamount="1" data-thumb="{{url('media/slider/3.jpg')}}">
@@ -74,7 +74,7 @@
               </li>
               <li data-transition="slideleft" data-slotamount="1" data-thumb="{{url('media/slider/4.jpg')}}">
                 <img src="{{url('media/slider/4.jpg')}}">
-              </li>
+              </li>--}}
             </ul>
         </div>
         <!-- END SLIDER -->
