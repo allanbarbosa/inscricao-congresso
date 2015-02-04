@@ -51,8 +51,8 @@ class Caravana implements NegocioInterface
                     throw new \AppException('Só é permitido Caravanas do Interior do Estado ou de outro municipio');
                 }
 
-                if(count($input['nome']) < 4){
-                    throw new \AppException('O número de participantes deve conter no mínimo 5 pessoas');
+                if(count($input['nomeCompleto']) < 4){
+                    throw new \AppException('O número de participantes deve conter no mínimo 4 pessoas');
                 }
 
                 for($i=0; $i<count($input['cpf']); $i++){
