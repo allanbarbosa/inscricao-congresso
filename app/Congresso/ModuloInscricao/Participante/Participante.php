@@ -67,11 +67,15 @@ class Participante implements NegocioInterface
                     throw new \AppException('O CPF passado já está cadastrado no sistema');
                 }
 
+                $data = \DateTime::createFromFormat('d/m/Y', $input['dataNascimento']);
+
+
+
                 $dados['part_nome_completo']                = $input['nomeCompleto'];
                 $dados['part_nome_cracha']                  = $input['nomeCracha'];
                 $dados['part_cpf']                          = self::removeCaracter($input['cpf'], ['.', '-'], ['','']);
                 $dados['part_rg']                           = $input['rg'];
-                $dados['part_data_nascimento']              = date('Y-m-d', strtotime($input['dataNascimento']));
+                $dados['part_data_nascimento']              = $data->format('Y-m-d');//date('Y-m-d', strtotime($input['dataNascimento']));
                 $dados['part_endereco']                     = $input['endereco'];
                 $dados['cod_municipios']                    = $input['municipio'];
                 $dados['part_telefone_residencial']         = $input['telefoneResidencial'];
