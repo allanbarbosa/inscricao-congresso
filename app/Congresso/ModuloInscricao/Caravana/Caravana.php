@@ -79,10 +79,12 @@ class Caravana implements NegocioInterface
 
                     $participantes = new Participante();
 
+                    $data = \DateTime::createFromFormat('d/m/Y', $input['dataNascimento'][$i]);
+
                     $participantes->part_nome_completo       = $input['nomeCompleto'][$i];
                     $participantes->part_nome_cracha         = $input['nomeCracha'][$i];
                     $participantes->part_cpf                 = self::removeCaracter($input['cpf'][$i], ['.', '-'], ['','']);
-                    $participantes->part_data_nascimento     = date('Y-m-d', strtotime($input['dataNascimento'][$i]));
+                    $participantes->part_data_nascimento     = $data->format('Y-m-d');//date('Y-m-d', strtotime($input['dataNascimento'][$i]));
                     $participantes->cod_municipios           = $input['municipio'];
                     $participantes->part_telefone_celular    = $input['telefone'][$i];
                     $participantes->part_email               = $input['email'][$i];

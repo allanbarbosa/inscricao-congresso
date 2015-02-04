@@ -69,8 +69,6 @@ class Participante implements NegocioInterface
 
                 $data = \DateTime::createFromFormat('d/m/Y', $input['dataNascimento']);
 
-
-
                 $dados['part_nome_completo']                = $input['nomeCompleto'];
                 $dados['part_nome_cracha']                  = $input['nomeCracha'];
                 $dados['part_cpf']                          = self::removeCaracter($input['cpf'], ['.', '-'], ['','']);
