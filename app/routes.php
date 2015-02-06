@@ -12,7 +12,7 @@
 */
 
 
-Route::get('/', function()
+/*Route::get('/', function()
 {
 	return View::make('home');
 });
@@ -22,10 +22,14 @@ Route::get('/', function()
 //});
 Route::get('/agradeco', function(){
 	return View::make('hello');
-});
+});*/
 
 Route::get('/municipios', '\Congresso\ModuloAdministrativo\Municipios\Controllers\MunicipiosController@getMunicipios');
 Route::get('/instituicoes', '\Congresso\ModuloAdministrativo\Instituicao\Controllers\InstituicaoController@getInstituicoes');
 
 Route::controller('/inscricao', '\Congresso\ModuloInscricao\Participante\Controllers\ParticipanteController');
 Route::controller('/caravana','\Congresso\ModuloInscricao\Caravana\Controllers\CaravanaController');
+
+Route::get('/admin', function(){
+	return View::make('admin.home');
+});

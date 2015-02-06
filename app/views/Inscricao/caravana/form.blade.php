@@ -294,7 +294,7 @@
         {
 
             if(elemento.length < 4){
-                alert('No mínimo precisa ter um total de 5 integrantes da Caravana');
+                alert('No mínimo precisa ter um total de 4 integrantes da Caravana');
                 return false;
             }
 
