@@ -12,12 +12,12 @@
 */
 
 
-/*Route::get('/', function()
+Route::get('/', function()
 {
 	return View::make('home');
 });
 
-//Route::get('/inscricao', function(){
+/*//Route::get('/inscricao', function(){
 //	return View::make('Inscricao.form');
 //});
 Route::get('/agradeco', function(){
