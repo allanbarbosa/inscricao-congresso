@@ -30,6 +30,15 @@ Route::get('/instituicoes', '\Congresso\ModuloAdministrativo\Instituicao\Control
 Route::controller('/inscricao', '\Congresso\ModuloInscricao\Participante\Controllers\ParticipanteController');
 Route::controller('/caravana','\Congresso\ModuloInscricao\Caravana\Controllers\CaravanaController');
 
-Route::get('/admin', function(){
-	return View::make('admin.home');
+Route::get('login', array('before' => array('guest'), 'uses' => 'Congresso\ModuloAdministrativo\Usuario\Controllers\LoginController@getIndex'));
+Route::post('login', array('before' => array('guest', 'csrf'), 'uses' => 'Congresso\ModuloAdministrativo\Usuario\Controllers\LoginController@postIndex'));
+Route::get('logout', array('before' => 'auth', 'uses' =>'Congresso\ModuloAdministrativo\Usuario\Controllers\LoginController@getLogout'));
+
+Route::group(array('before' => array('auth')), function(){
+
+	Route::get('/admin', function(){
+		return View::make('admin.home');
+	});
+
+	Route::controller('/admin/participantes', 'Congresso\ModuloInscricao\Participante\Controllers\ParticipanteController');
 });

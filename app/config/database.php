@@ -65,10 +65,10 @@ return array(
 
 		'pgsql' => array(
 			'driver'   => 'pgsql',
-			'host'     => 'localhost',
+			'host'     => '104.131.55.80',
 			'database' => 'inscricao_congresso',
-			'username' => 'feeb',
-			'password' => 'qSA8NT5rpbCRqZ26',
+			'username' => 'postgres',
+			'password' => 'ceapontodeluz2015',
 			'charset'  => 'utf8',
 			'prefix'   => '',
 			'schema'   => 'public',

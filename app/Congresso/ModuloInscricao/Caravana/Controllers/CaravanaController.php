@@ -14,10 +14,15 @@ class CaravanaController extends \BaseController
 
     public function getIndex()
     {
+
+    }
+
+    public function getForm()
+    {
         return \View::make('Inscricao.caravana.form');
     }
 
-    public function postIndex()
+    public function postForm()
     {
         $input = \Input::all();
 
