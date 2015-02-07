@@ -59,7 +59,7 @@ class ParticipanteController extends \BaseController
 
         if(is_null($id)){
             \Session::flash('sucesso', 'Seu cadastro foi salvo com sucesso');
-            return \Redirect::to('/inscricao');
+            return \Redirect::to('/inscricao/form');
         }else{
             \Session::flash('sucesso', 'Registro atualizado com sucesso');
             return \Redirect::to('admin/participantes');

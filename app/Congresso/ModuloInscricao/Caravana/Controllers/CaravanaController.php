@@ -38,6 +38,6 @@ class CaravanaController extends \BaseController
         }
 
         \Session::flash('sucesso', 'Seu cadastro foi salvo com sucesso');
-        return \Redirect::to('/caravana');
+        return \Redirect::to('/caravana/form');
     }
 }
