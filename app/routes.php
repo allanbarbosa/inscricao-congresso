@@ -41,4 +41,5 @@ Route::group(array('before' => array('auth')), function(){
 	});
 
 	Route::controller('/admin/participantes', 'Congresso\ModuloInscricao\Participante\Controllers\ParticipanteController');
+	Route::controller('/admin/caravanas', 'Congresso\ModuloInscricao\Caravana\Controllers\CaravanaController');
 });

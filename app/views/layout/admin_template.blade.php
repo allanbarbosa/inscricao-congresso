@@ -3,7 +3,7 @@
 <head>
     <meta http-equiv="content-type" content="text/html; charset=UTF-8">
     <meta charset="utf-8">
-    <title>Bootstrap 3 Control Panel</title>
+    <title>Congresso da Juventude Espírita da Bahia</title>
     <meta name="generator" content="Bootply" />
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
     <link href="{{ asset('bower_components/bootstrap/dist/css/bootstrap.min.css')}}" rel="stylesheet">
@@ -45,7 +45,7 @@
 
             <ul class="nav nav-stacked">
                 <li><a href="{{ url('admin/participantes') }}"><i class="glyphicon glyphicon-flash"></i> Participantes</a></li>
-                <li><a href="javascript:;"><i class="glyphicon glyphicon-link"></i> Caravanas</a></li>
+                <li><a href="{{ url('admin/caravanas') }}"><i class="glyphicon glyphicon-link"></i> Caravanas</a></li>
                 <li><a href="javascript:;"><i class="glyphicon glyphicon-list-alt"></i> Instituições</a></li>
                 <li><a href="javascript:;"><i class="glyphicon glyphicon-book"></i> Relatórios</a></li
             </ul>
@@ -72,5 +72,7 @@
 
     </div>
 </div>
+<script src="{{ asset('bower_components/jquery/dist/jquery.min.js') }}"></script>
+@yield('scripts')
 </body>
 </html>

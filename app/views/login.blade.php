@@ -23,6 +23,12 @@
 </div>
 <div class="container">
 
+    @if(Session::get('erro') )
+        <div data-alert class="alert alert-danger">
+            {{ Session::get('erro') }}
+        </div>
+    @endif
+
     {{ Form::open() }}
         <div class="form-group col-sm-6 {{ ($errors->first('usuario')) ? 'has-error' : '' }}">
             <label for="usuario">Usuário</label>

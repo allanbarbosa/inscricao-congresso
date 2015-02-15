@@ -14,12 +14,34 @@ class CaravanaController extends \BaseController
 
     public function getIndex()
     {
+        $dadosCaravanas = $this->caravana->all();
 
+        return \View::make('admin.caravana.home')->with(compact('dadosCaravanas'));
     }
 
     public function getForm()
     {
-        return \View::make('Inscricao.caravana.form');
+        if(\Request::segment(1) != 'admin'){
+
+            return \View::make('Inscricao.caravana.form');
+
+        }else{
+
+            return \View::make('admin.caravana.form');
+        }
+
+    }
+
+    public function getVisualizar($id)
+    {
+        $dadosCaravana = $this->caravana->find($id);
+
+        if(!$dadosCaravana){
+            \Session::flash('erro', $this->caravana->getErrors());
+            return \Redirect::to('admin/caravanas');
+        }
+
+        return \View::make('admin.caravana.index')->with(compact('dadosCaravana'));
     }
 
     public function postForm()
@@ -38,6 +60,12 @@ class CaravanaController extends \BaseController
         }
 
         \Session::flash('sucesso', 'Seu cadastro foi salvo com sucesso');
-        return \Redirect::to('/caravana/form');
+
+        if(\Request::segment(1) != 'admin'){
+            return \Redirect::to('/caravana/form');
+        }else{
+            return \Redirect::to('admin/caravanas');
+        }
+
     }
 }

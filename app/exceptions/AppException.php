@@ -7,7 +7,7 @@ class AppException extends Exception
 
     public function getMensagem()
     {
-        $this->message = "Erro: " . $this->getMessage();
+        $this->message = $this->getMessage();
 
         $this->log();
 

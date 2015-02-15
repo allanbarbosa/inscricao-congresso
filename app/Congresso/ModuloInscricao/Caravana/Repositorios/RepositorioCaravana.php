@@ -18,9 +18,25 @@ class RepositorioCaravana extends RepositorioAbstract
         parent::__construct($this->caravana);
     }
 
+    public function find($id)
+    {
+        return $this->caravana->join('municipios', 'municipios.muni_id', '=', 'caravana.cod_municipio')->where('cara_id', '=', $id)->first();
+    }
+
     public function getWhere(array $input)
     {
         // TODO: Implement getWhere() method.
+        $campos = [
+            'cara_nome as nomeCaravana',
+            'cara_responsavel as responsavelCaravana',
+            'cara_telefone_responsavel as telefoneResponsavel',
+            'municipios.muni_descricao as municipio',
+            'cara_id as id'
+        ];
+
+        return $this->caravana->select($campos)
+                              ->join('municipios', 'municipios.muni_id', '=', 'caravana.cod_municipio')
+                              ->paginate(10);
     }
 
     public function save(array $input)

@@ -118,7 +118,7 @@ class RepositorioParticipante extends RepositorioAbstract
 
         return $this->participante->select($campos)
                                   ->orderBy('part_id')
-                                  ->paginate(5);
+                                  ->paginate(10);
     }
 
 }

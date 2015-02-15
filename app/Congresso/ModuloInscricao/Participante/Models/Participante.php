@@ -10,4 +10,9 @@ class Participante extends Model
     protected $primaryKey = 'part_id';
 
     use SoftDeletingTrait;
+
+    public function instituicao()
+    {
+        return $this->belongsTo('Congresso\ModuloAdministrativo\Instituicao\Models\Instituicao', 'cod_instituicao');
+    }
 }

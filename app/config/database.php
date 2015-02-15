@@ -63,12 +63,23 @@ return array(
 			'prefix'    => '',
 		),
 
-		'pgsql' => array(
+		/*'pgsql' => array(
 			'driver'   => 'pgsql',
 			'host'     => '104.131.55.80',
 			'database' => 'inscricao_congresso',
 			'username' => 'postgres',
 			'password' => 'ceapontodeluz2015',
+			'charset'  => 'utf8',
+			'prefix'   => '',
+			'schema'   => 'public',
+		),*/
+
+		'pgsql' => array(
+			'driver'   => 'pgsql',
+			'host'     => '104.236.241.185',
+			'database' => 'inscricao_congresso',
+			'username' => 'postgres',
+			'password' => 'BYxvSxjTcGYNWWUj',
 			'charset'  => 'utf8',
 			'prefix'   => '',
 			'schema'   => 'public',

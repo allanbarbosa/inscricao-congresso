@@ -28,11 +28,59 @@ class Caravana implements NegocioInterface
     public function all($input = null)
     {
         // TODO: Implement all() method.
+        try {
+
+            $input = [];
+
+            $caravanas = $this->repositorioCaravana->getWhere($input);
+
+            return $caravanas;
+
+        }catch (\AppException $e){
+            $this->errors = $e->getMensagem();
+            return false;
+        }
     }
 
     public function find($id)
     {
         // TODO: Implement find() method.
+        try {
+
+            $caravana = $this->repositorioCaravana->find($id);
+
+            if(!$caravana){
+                throw new \AppException('Registro solicitado não foi encontrado');
+            }
+
+            $dadosCaravana = [
+                'nomeCaravana'          => $caravana->cara_nome,
+                'responsavelCaravana'   => $caravana->cara_responsavel,
+                'telefoneResponsavel'   => $caravana->cara_telefone_responsavel,
+                'municipioCaravana'     => $caravana->muni_descricao,
+                'participantes'         => []
+            ];
+
+            $participantes = $caravana->participante;
+
+            foreach($participantes as $key => $p){
+
+                $instituicao = $p->instituicao;
+
+                $dadosCaravana['participantes'][$key] = [
+                    'nomeParticipante'      => $p->part_nome_completo,
+                    'dataNascimento'        => $p->part_data_nascimento,
+                    'emailParticipante'     => $p->part_email,
+                    'instituicao'           => $instituicao->inst_nome,
+                    'pago'                  => $p->part_pago
+                ];
+            }
+
+            return $dadosCaravana;
+        }catch(\AppException $e){
+            $this->errors = $e->getMensagem();
+            return false;
+        }
     }
 
     public function save(array $input)

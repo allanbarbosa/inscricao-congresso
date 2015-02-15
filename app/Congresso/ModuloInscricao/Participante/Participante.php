@@ -151,6 +151,29 @@ class Participante implements NegocioInterface
     public function delete($id)
     {
         // TODO: Implement delete() method.
+        try {
+
+            $participante = $this->repositorioParticipante->find($id);
+
+            if(!$participante){
+                throw new \AppException('Participante solicitado não foi encontrado');
+            }
+
+            $input['id']    = $id;
+            $input['deleted_by'] = \Auth::user()->usua_id;
+
+            $deletar = $this->repositorioParticipante->delete($input);
+
+            if(!$deletar){
+                throw new \AppException('Não foi possivel excluir o participante');
+            }
+
+            return true;
+
+        }catch (\AppException $e){
+            $this->errors = $e->getMensagem();
+            return false;
+        }
     }
 
     public function getErrors()

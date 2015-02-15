@@ -57,7 +57,7 @@
                         @endif
 
                         @if(Session::get('erro') )
-                            <div data-alert class="alert alert-warning">
+                            <div data-alert class="alert alert-danger">
                                 {{ Session::get('erro') }}
                             </div>
                         @endif
