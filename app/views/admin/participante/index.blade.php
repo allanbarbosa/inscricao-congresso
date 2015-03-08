@@ -59,7 +59,17 @@
             @endif
         </div>
 
+    </div>
 
+    <div class="row">
+        <div class="col-md-6">
+            <strong>Apresentador de trabalho?</strong>
+            @if(!$dadosParticipante['apresentador'])
+                <a class="btn btn-danger" href="{{ url('admin/apresentador/nao-apresentar/' . $dadosParticipante['id']) }}">Não</a>
+            @else
+                <a class="btn btn-success" href="{{ url('admin/apresentador/apresentar/' . $dadosParticipante['id']) }}">Sim</a>
+            @endif
+        </div>
     </div>
 
     <br/>

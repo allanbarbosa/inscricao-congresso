@@ -95,10 +95,6 @@ class Caravana implements NegocioInterface
                     return $this->validacaoCaravana->errors();
                 }
 
-                if($input['municipio'] == 537){
-                    throw new \AppException('Só é permitido Caravanas do Interior do Estado ou de outro municipio');
-                }
-
                 if(count($input['nomeCompleto']) < 4){
                     throw new \AppException('O número de participantes deve conter no mínimo 4 pessoas');
                 }

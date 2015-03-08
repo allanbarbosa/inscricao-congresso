@@ -69,7 +69,9 @@ class Participante implements NegocioInterface
                 'municipio'         => $participante->muni_descricao,
                 'sexo'              => $participante->sexo_descricao,
                 'instituicao'       => $participante->inst_nome,
-                'status'            => $participante->part_pago
+                'status'            => $participante->part_pago,
+                'id'                => $participante->part_id,
+                'apresentador'      => $participante->part_apresentador
             ];
 
             return $dadosParticipante;

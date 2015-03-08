@@ -28,7 +28,9 @@ class RepositorioParticipante extends RepositorioAbstract
             'municipios.muni_descricao',
             'sexo.sexo_descricao',
             'instituicao.inst_nome',
-            'part_pago'
+            'part_pago',
+            'part_id',
+            'part_apresentador'
         ];
 
         return $this->participante->select($campos)
