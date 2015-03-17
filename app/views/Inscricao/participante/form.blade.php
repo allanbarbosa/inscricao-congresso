@@ -22,11 +22,6 @@
         {{ Form::text('cpf', '', ['class' => 'form-control cpf']) }}
         {{ $errors->first('cpf', '<div class="alert alert-danger">:message</div>') }}
     </div>
-    <div class="form-group col-sm-4 {{ ($errors->first('rg')) ? 'has-error' : '' }}">
-        <label for="rg" class="right">RG</label>
-        {{ Form::text('rg', '', ['class' => 'form-control']) }}
-        {{ $errors->first('rg', '<div class="alert alert-danger">:message</div>') }}
-    </div>
     <div class="form-group col-sm-4 {{ ($errors->first('sexo')) ? 'has-error' : '' }}">
          <label for="sexo">Sexo</label>
         {{--{{ Form::select('sexo', ['masculino', 'feminino'],'', ['class'=>'form-control']) }}--}}
@@ -38,46 +33,23 @@
         {{ Form::text('email', '', ['class' => 'form-control']) }}
         {{ $errors->first('email', '<div class="alert alert-danger">:message</div>') }}
     </div>
-    <div class="form-group col-sm-4 {{ ($errors->first('telefoneResidencial')) ? 'has-error' : '' }}">
-        <label for="telefoneResidencial">Telefone Residencial</label>
-        {{ Form::text('telefoneResidencial', '', ['class' => 'form-control telefone']) }}
-        {{ $errors->first('telefoneResidencial', '<div class="alert alert-danger">:message</div>') }}
-    </div>
     <div class="form-group col-sm-4 {{ ($errors->first('telefoneCelular')) ? 'has-error' : '' }}">
         <label for="telefoneCelular">Telefone Celular</label>
         {{ Form::text('telefoneCelular', '', ['class' => 'form-control telefone']) }}
         {{ $errors->first('telefoneCelular', '<div class="alert alert-danger">:message</div>') }}
     </div>
-    <div class="form-group col-sm-6 {{ ($errors->first('nomeEmergencia')) ? 'has-error' : '' }}">
-        <label for="nomeEmergencia">Nome em Caso de Emergência</label>
-        {{ Form::text('nomeEmergencia', '', ['class' => 'form-control']) }}
-        {{ $errors->first('nomeEmergencia', '<div class="alert alert-danger">:message</div>') }}
-    </div>
-    <div class="form-group col-sm-6 {{ ($errors->first('telefoneEmergencia')) ? 'has-error' : '' }}">
-        <label for="telefoneEmergencia">Telefone em Caso de Emergência</label>
-        {{ Form::text('telefoneEmergencia', '', ['class' => 'form-control telefone']) }}
-        {{ $errors->first('telefoneEmergencia', '<div class="alert alert-danger">:message</div>') }}
-    </div>
-    <div class="form-group col-sm-12 {{ ($errors->first('endereco')) ? 'has-error' : '' }}">
-        <label for="endereco">Endereço</label>
-        {{ Form::text('endereco', '', ['class' => 'form-control']) }}
-        {{ $errors->first('endereco', '<div class="alert alert-danger">:message</div>') }}
-    </div>
     <div class="form-group col-sm-6 {{ ($errors->first('estado')) ? 'has-error' : '' }}">
         <label for="estados">Estado</label>
-        {{--{{ Form::select('estado', ['Bahia'], '', ['class' => 'form-control']) }}--}}
         {{ Form::dropdownbox('estado', 'esta_id', 'esta_descricao', 'estado', ['class' => 'form-control']) }}
         {{ $errors->first('estado', '<div class="alert alert-danger">:message</div>') }}
     </div>
     <div class="form-group col-sm-6 {{ ($errors->first('municipio')) ? 'has-error' : '' }}">
          <label for="municipio">Municipio</label>
-        {{--{{ Form::select('municipio', ['salvador', 'feira de santana'],'', ['class'=>'form-control']) }}--}}
         {{ Form::dropdownbox('municipios', 'muni_id', 'muni_descricao', 'municipio', ['class' => 'form-control']) }}
         {{ $errors->first('municipio', '<div class="alert alert-danger">:message</div>') }}
     </div>
     <div class="form-group col-sm-12 {{ ($errors->first('instituicao')) ? 'has-error' : '' }}">
          <label for="instituicao">Instituição</label>
-        {{--{{ Form::select('instituicao', ['Amar' , 'Amado'], '',['class'=>'form-control']) }}--}}
         {{ Form::dropdownbox('instituicao', 'inst_id', 'inst_nome', 'instituicao', ['class' => 'form-control']) }}
         {{ $errors->first('instituicao', '<div class="alert alert-danger">:message</div>') }}
     </div>
