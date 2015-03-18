@@ -86,10 +86,10 @@ class ParticipanteController extends \BaseController
 
         if(!$participante){
             \Session::flash('erro', $this->participante->getErrors());
-            return \Redirect::to('admin/participantes');
+            return \Redirect::back();
         }
 
         \Session::flash('sucesso', 'Registro atualizado com sucesso');
-        return \Redirect::to('admin/participantes');
+        return \Redirect::back();
     }
 }

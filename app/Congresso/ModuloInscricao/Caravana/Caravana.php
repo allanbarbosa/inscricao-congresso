@@ -68,6 +68,7 @@ class Caravana implements NegocioInterface
                 $instituicao = $p->instituicao;
 
                 $dadosCaravana['participantes'][$key] = [
+                    'id'                    => $p->part_id,
                     'nomeParticipante'      => $p->part_nome_completo,
                     'dataNascimento'        => $p->part_data_nascimento,
                     'emailParticipante'     => $p->part_email,
