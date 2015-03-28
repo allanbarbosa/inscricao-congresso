@@ -21,9 +21,11 @@ class CaravanaController extends \BaseController
 
     public function getForm()
     {
+
         if(\Request::segment(1) != 'admin'){
 
-            return \View::make('Inscricao.caravana.form');
+            return \Redirect::to('/');
+            //return \View::make('Inscricao.caravana.form');
 
         }else{
 

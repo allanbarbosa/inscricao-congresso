@@ -34,7 +34,8 @@ class ParticipanteController extends \BaseController
 
     public function getForm($id = null)
     {
-        return \View::make('Inscricao.participante.form');
+        //return \View::make('Inscricao.participante.form');
+        return \Redirect::to('/');
     }
 
     public function postForm($id = null)

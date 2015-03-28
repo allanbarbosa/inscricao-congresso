@@ -51,8 +51,9 @@
             <div class="col-lg-12 mt centered">
             	<h4>CLIQUE AQUI E FAÇA SEU CADASTRO</h4>
 				<form class="form-inline" role="form">
-				  <a href="/inscricao/form" class="btn btn-lg btn-info">QUERO ME INSCREVER AGORA!</a>
-				  <a href="/caravana/form" class="btn btn-lg btn-info">QUERO INSCREVER MINHA CARAVANA!</a>
+				  {{--<a href="/inscricao/form" class="btn btn-lg btn-info">QUERO ME INSCREVER AGORA!</a>--}}
+				  {{--<a href="/caravana/form" class="btn btn-lg btn-info">QUERO INSCREVER MINHA CARAVANA!</a>--}}
+                    <a href="#" class="btn btn-lg btn-info">INSCRIÇÕES ENCERRADAS!</a>
 				</form>
 			</div>
 
