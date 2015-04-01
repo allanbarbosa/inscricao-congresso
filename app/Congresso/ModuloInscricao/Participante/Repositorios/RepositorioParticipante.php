@@ -47,11 +47,8 @@ class RepositorioParticipante extends RepositorioAbstract
         $this->participante->part_nome_completo         = $input['part_nome_completo'];
         $this->participante->part_nome_cracha           = $input['part_nome_cracha'];
         $this->participante->part_cpf                   = $input['part_cpf'];
-        $this->participante->part_rg                    = $input['part_rg'];
         $this->participante->part_data_nascimento       = $input['part_data_nascimento'];
-        $this->participante->part_endereco              = $input['part_endereco'];
         $this->participante->cod_municipios             = $input['cod_municipios'];
-        $this->participante->part_telefone_residencial  = $input['part_telefone_residencial'];
         $this->participante->part_telefone_celular      = $input['part_telefone_celular'];
         $this->participante->part_email                 = $input['part_email'];
         $this->participante->cod_instituicao            = $input['cod_instituicao'];

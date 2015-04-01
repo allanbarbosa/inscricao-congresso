@@ -34,8 +34,13 @@ class ParticipanteController extends \BaseController
 
     public function getForm($id = null)
     {
-        //return \View::make('Inscricao.participante.form');
-        return \Redirect::to('/');
+        if(\Request::segment(1) != 'admin'){
+            //return \View::make('Inscricao.participante.form');
+            return \Redirect::to('/');
+        }else{
+            return \View::make('admin.participante.form');
+        }
+
     }
 
     public function postForm($id = null)
@@ -59,11 +64,17 @@ class ParticipanteController extends \BaseController
         }
 
         if(is_null($id)){
+
+            if(\Request::segment(1) == 'admin'){
+                \Session::flash('sucesso', 'Seu cadastro foi salvo com sucesso');
+                return \Redirect::to('/admin/participantes');
+            }
+
             \Session::flash('sucesso', 'Seu cadastro foi salvo com sucesso');
             return \Redirect::to('/inscricao/form');
         }else{
             \Session::flash('sucesso', 'Registro atualizado com sucesso');
-            return \Redirect::to('admin/participantes');
+            return \Redirect::to('/admin/participantes');
         }
 
     }

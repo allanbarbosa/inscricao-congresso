@@ -2,8 +2,14 @@
 
 @section('content')
 
+
+
     <h1>Participantes</h1>
     <hr/>
+
+    <div class="row">
+        <a class="btn btn-info pull-right" href="{{ url('admin/participantes/form') }}">Novo Participante</a>
+    </div>
 
     <div class="row">
         <table class="table">
