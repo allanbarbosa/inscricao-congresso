@@ -85,6 +85,17 @@ return array(
 			'schema'   => 'public',
 		),
 
+        /*'pgsql' => array(
+            'driver'   => 'pgsql',
+            'host'     => 'localhost',
+            'database' => 'inscricao_congresso',
+            'username' => 'homestead',
+            'password' => 'secret',
+            'charset'  => 'utf8',
+            'prefix'   => '',
+            'schema'   => 'public',
+        ),*/
+
 		'sqlsrv' => array(
 			'driver'   => 'sqlsrv',
 			'host'     => 'localhost',

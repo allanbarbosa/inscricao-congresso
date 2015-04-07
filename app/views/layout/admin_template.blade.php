@@ -46,7 +46,7 @@
             <ul class="nav nav-stacked">
                 <li><a href="{{ url('admin/participantes') }}"><i class="glyphicon glyphicon-flash"></i> Participantes</a></li>
                 <li><a href="{{ url('admin/caravanas') }}"><i class="glyphicon glyphicon-link"></i> Caravanas</a></li>
-                <li><a href="javascript:;"><i class="glyphicon glyphicon-list-alt"></i> Instituições</a></li>
+                <li><a href="{{ url('admin/participantes-pagos') }}"><i class="glyphicon glyphicon-list-alt"></i> Participantes Pagos</a></li>
                 <li><a href="javascript:;"><i class="glyphicon glyphicon-book"></i> Relatórios</a></li
             </ul>
 

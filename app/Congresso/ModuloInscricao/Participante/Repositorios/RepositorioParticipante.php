@@ -115,9 +115,14 @@ class RepositorioParticipante extends RepositorioAbstract
             'part_id as id'
         ];
 
-        return $this->participante->select($campos)
-                                  ->orderBy('part_id')
-                                  ->paginate(10);
+        $participantes = $this->participante->select($campos)
+                                            ->orderBy('part_id');
+
+        if(isset($input['part_pago'])){
+            $participantes = $participantes->where('part_pago', '=', $input['part_pago']);
+        }
+
+        return $participantes->paginate(10);
     }
 
 }
